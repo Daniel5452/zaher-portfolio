@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Head from "next/head";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { 
   Mail, Linkedin, FileText, MapPin, Phone, ArrowRight, Crown, Building2, Hotel,
@@ -233,7 +234,13 @@ export default function Portfolio() {
   const headerScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.98]);
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 relative overflow-hidden">
+    <>
+      <Head>
+        <title>Zaher Portfolio</title>
+        <meta name="description" content="Senior Operations & Hospitality Services Leader - Executive Portfolio" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <div className="min-h-screen bg-white text-slate-800 relative overflow-hidden">
       {/* NAV */}
       <nav className="border-b border-blue-200/40 bg-white/95 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-6 py-4">
@@ -414,17 +421,22 @@ export default function Portfolio() {
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                       <div className="flex items-center gap-4 mb-3 md:mb-0">
                         <motion.div 
-                          className="w-16 h-16 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-3 flex items-center justify-center border border-blue-200"
+                          className="w-16 h-16 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-2 flex items-center justify-center border border-blue-200"
                           whileHover={{ scale: 1.05, rotate: 5 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <Image
-                            src={job.logo}
-                            alt={`${job.company} logo`}
-                            width={40}
-                            height={40}
-                            className="object-contain"
-                          />
+                          <div className="relative w-full h-full flex items-center justify-center">
+                            <Image
+                              src={job.logo}
+                              alt={`${job.company} logo`}
+                              fill
+                              className="object-contain"
+                              sizes="(max-width: 768px) 48px, 64px"
+                              onError={(e) => {
+                                console.log('Image failed to load:', job.logo);
+                              }}
+                            />
+                          </div>
                         </motion.div>
                         <div>
                           <h3 className="font-bold text-xl text-slate-900 mb-1">{job.role}</h3>
@@ -585,5 +597,6 @@ export default function Portfolio() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
