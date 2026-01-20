@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zaher Osman - Executive Portfolio
 
-## Getting Started
+Professional executive portfolio showcasing 15+ years of operations leadership across Saudi Arabia's transformative projects including NEOM, Aramco-affiliated Petro Rabigh, and luxury hospitality brands.
 
-First, run the development server:
+## 🚀 Live Portfolio
+- **Website:** [Coming Soon - Will be deployed]
+- **LinkedIn:** [https://www.linkedin.com/in/zaherbosman](https://www.linkedin.com/in/zaherbosman)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎯 Key Highlights
+- **15,000+ residents** managed across NEOM communities
+- **450+ hotel rooms** overseen (Hilton & Waldorf Astoria)
+- **95%+ SLA compliance** consistently achieved
+- **30,000+ stakeholders** reached through executive communications
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏗️ Tech Stack
+- **Framework:** Next.js 16.1.4
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Deployment:** Ready for Vercel/Netlify
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Deployment Options
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Option 1: Vercel (Recommended)
+1. Push to GitHub
+2. Connect to Vercel
+3. Deploy automatically
 
-## Learn More
+### Option 2: Netlify
+1. Drag & drop build folder
+2. Custom domain support
 
-To learn more about Next.js, take a look at the following resources:
+### Option 3: GitHub Pages
+1. Build static export
+2. Deploy to gh-pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📧 Contact
+**Zaher Osman**  
+Senior Operations & Hospitality Services Leader  
+📧 zaher_osman@hotmail.com  
+📱 +966 555179456  
+📍 Jeddah, Saudi Arabia - NEOM, Saudi Arabia
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Professional Executive Portfolio - Built with Next.js*
