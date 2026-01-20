@@ -167,8 +167,8 @@ const EDUCATION = [
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.3 },
-  transition: { duration: 0.6, ease: "easeOut" },
+  viewport: { once: true, amount: 0.1 },
+  transition: { duration: 0.5, ease: "easeOut" },
 };
 
 const staggerContainer = {
@@ -229,7 +229,7 @@ export default function Portfolio() {
   const headerScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.98]);
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 relative overflow-hidden">
+    <div className="min-h-screen bg-white text-slate-800 relative">
       {/* NAV */}
       <nav className="border-b border-blue-200/40 bg-white/95 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-6 py-4">
@@ -247,8 +247,8 @@ export default function Portfolio() {
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
                 className="inline-flex items-center gap-2 text-slate-700 hover:text-blue-700 transition-colors font-medium"
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.2 }}
+                whileHover={{ y: -1 }}
+                transition={{ duration: 0.15 }}
               >
                 {link.icon && <link.icon size={16} />}
                 {link.label}
@@ -315,8 +315,9 @@ export default function Portfolio() {
             <motion.a 
               href={`mailto:${META.email}`}
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 inline-flex items-center gap-2 font-medium shadow-lg"
-              whileHover={{ y: -2, boxShadow: "0 10px 25px -5px rgb(0 0 0 / 0.2)" }}
+              whileHover={{ y: -1, boxShadow: "0 10px 25px -5px rgb(0 0 0 / 0.15)" }}
               whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.15 }}
             >
               <Mail size={18} /> Contact
             </motion.a>
@@ -325,8 +326,9 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 border border-blue-300 text-slate-800 rounded-lg hover:bg-blue-50 hover:border-blue-400 transition-all duration-300 inline-flex items-center gap-2 font-medium"
-              whileHover={{ y: -2 }}
+              whileHover={{ y: -1 }}
               whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.15 }}
             >
               <FileText size={18} /> Resume
             </motion.a>
@@ -365,9 +367,8 @@ export default function Portfolio() {
                 <Card key={i} className="text-center" hover={true}>
                   <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: i * 0.05, duration: 0.4, ease: "easeOut" }}
                   >
                     <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 bg-clip-text text-transparent mb-2">{kpi.value}</div>
                     <div className="text-sm font-medium text-slate-700 mb-1">{kpi.label}</div>
@@ -395,62 +396,53 @@ export default function Portfolio() {
             <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-900 via-blue-800 to-slate-900 bg-clip-text text-transparent mb-8">Professional Experience</h2>
             <div className="space-y-8">
               {EXPERIENCE.map((job, i) => (
-                <Card 
-                  key={i} 
-                  hover={true}
+                <Card
+                  key={i}
+                  hover
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.08, duration: 0.5, ease: "easeOut" }}
                 >
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1, duration: 0.6 }}
-                  >
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                      <div className="flex items-center gap-4 mb-3 md:mb-0">
-                        <motion.div 
-                          className="w-16 h-16 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-3 flex items-center justify-center border border-blue-200"
-                          whileHover={{ scale: 1.05, rotate: 5 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <Image
-                            src={job.logo}
-                            alt={`${job.company} logo`}
-                            width={40}
-                            height={40}
-                            className="object-contain"
-                            unoptimized
-                          />
-                        </motion.div>
-                        <div>
-                          <h3 className="font-bold text-xl text-slate-900 mb-1">{job.role}</h3>
-                          <div className="text-blue-700 font-medium text-lg">{job.company}</div>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-sm font-medium text-slate-900">{job.period}</div>
-                        <div className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">{job.duration}</div>
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                    <div className="flex items-center gap-4 mb-3 md:mb-0">
+                      <motion.div 
+                        className="w-16 h-16 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-3 flex items-center justify-center border border-blue-200"
+                        whileHover={{ scale: 1.05, rotate: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Image
+                          src={job.logo}
+                          alt={`${job.company} logo`}
+                          width={40}
+                          height={40}
+                          className="object-contain"
+                          unoptimized
+                        />
+                      </motion.div>
+                      <div>
+                        <h3 className="font-bold text-xl text-slate-900 mb-1">{job.role}</h3>
+                        <div className="text-blue-700 font-medium text-lg">{job.company}</div>
                       </div>
                     </div>
-                    <ul className="space-y-3 text-slate-700">
-                      {job.bullets.map((bullet, j) => (
-                        <motion.li 
-                          key={j} 
-                          className="flex gap-3"
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: (i * 0.1) + (j * 0.05), duration: 0.5 }}
-                        >
-                          <ArrowRight size={16} className="text-blue-500 mt-0.5 flex-shrink-0" />
-                          <span className="leading-relaxed">{bullet}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </motion.div>
+                    <div className="text-right">
+                      <div className="text-sm font-medium text-slate-900">{job.period}</div>
+                      <div className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">{job.duration}</div>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 text-slate-700">
+                    {job.bullets.map((bullet, j) => (
+                      <motion.li 
+                        key={j} 
+                        className="flex gap-3"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: (i * 0.08) + (j * 0.03), duration: 0.4 }}
+                      >
+                        <ArrowRight size={16} className="text-blue-500 mt-0.5 flex-shrink-0" />
+                        <span className="leading-relaxed">{bullet}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
                 </Card>
               ))}
             </div>
@@ -468,10 +460,9 @@ export default function Portfolio() {
                     key={i} 
                     className="border-b border-slate-100 last:border-b-0 pb-8 last:pb-0"
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1, duration: 0.6 }}
-                    whileHover={{ x: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.06, duration: 0.4, ease: "easeOut" }}
+                    whileHover={{ x: 8, transition: { duration: 0.2 } }}
                   >
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-bold text-slate-900 text-lg">{project.title}</h3>
@@ -498,9 +489,8 @@ export default function Portfolio() {
                   <motion.div 
                     className="flex justify-between items-start"
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1, duration: 0.6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.05, duration: 0.4, ease: "easeOut" }}
                   >
                     <div>
                       <h3 className="font-bold text-slate-900 mb-2 text-lg">{edu.school}</h3>
