@@ -208,17 +208,14 @@ function Marquee({ items }) {
   );
 }
 
-function Card({ children, className = "", hover = false }) {
+function Card({ children, className = "", hover = false, ...props }) {
   return (
     <motion.div 
       className={`rounded-2xl border border-slate-200 shadow-sm bg-white p-6 ${
         hover ? "hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-300" : ""
       } ${className}`}
       whileHover={hover ? { y: -4, boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" } : {}}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      {...props}
     >
       {children}
     </motion.div>
@@ -396,48 +393,64 @@ export default function Portfolio() {
         <section id="experience" className="mb-20">
           <motion.div {...fadeUp}>
             <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-900 via-blue-800 to-slate-900 bg-clip-text text-transparent mb-8">Professional Experience</h2>
-            <div className="space-y-6">
+            <div className="space-y-8">
               {EXPERIENCE.map((job, i) => (
                 <Card 
                   key={i} 
-                  hover={false}
-                  className="p-4 md:p-6"
+                  hover={true}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.6 }}
                 >
-                  <div className="flex flex-col space-y-4">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-2 flex items-center justify-center border border-blue-200 flex-shrink-0">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, duration: 0.6 }}
+                  >
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                      <div className="flex items-center gap-4 mb-3 md:mb-0">
+                        <motion.div 
+                          className="w-16 h-16 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-3 flex items-center justify-center border border-blue-200"
+                          whileHover={{ scale: 1.05, rotate: 5 }}
+                          transition={{ duration: 0.3 }}
+                        >
                           <Image
                             src={job.logo}
                             alt={`${job.company} logo`}
-                            width={32}
-                            height={32}
-                            className="object-contain w-full h-full"
+                            width={40}
+                            height={40}
+                            className="object-contain"
                             unoptimized
                           />
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <h3 className="font-bold text-lg sm:text-xl text-slate-900 leading-tight">{job.role}</h3>
-                          <div className="text-blue-700 font-medium text-base sm:text-lg">{job.company}</div>
+                        </motion.div>
+                        <div>
+                          <h3 className="font-bold text-xl text-slate-900 mb-1">{job.role}</h3>
+                          <div className="text-blue-700 font-medium text-lg">{job.company}</div>
                         </div>
                       </div>
-                      <div className="text-left sm:text-right flex-shrink-0">
+                      <div className="text-right">
                         <div className="text-sm font-medium text-slate-900">{job.period}</div>
-                        <div className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full inline-block">{job.duration}</div>
+                        <div className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">{job.duration}</div>
                       </div>
                     </div>
-                    <ul className="space-y-2 text-slate-700 text-sm sm:text-base">
+                    <ul className="space-y-3 text-slate-700">
                       {job.bullets.map((bullet, j) => (
-                        <li 
+                        <motion.li 
                           key={j} 
-                          className="flex gap-2 leading-relaxed"
+                          className="flex gap-3"
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: (i * 0.1) + (j * 0.05), duration: 0.5 }}
                         >
                           <ArrowRight size={16} className="text-blue-500 mt-0.5 flex-shrink-0" />
-                          <span>{bullet}</span>
-                        </li>
+                          <span className="leading-relaxed">{bullet}</span>
+                        </motion.li>
                       ))}
                     </ul>
-                  </div>
+                  </motion.div>
                 </Card>
               ))}
             </div>
