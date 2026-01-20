@@ -68,7 +68,7 @@ const EXPERIENCE = [
     company: "NEOM",
     role: "Senior Resident Relations Specialist",
     period: "April 2024 – Present",
-    duration: "10 months",
+    duration: "1.75 years",
     logo: "/neom-logo-png_seeklogo-358578.png",
     bullets: [
       "Directed resident experience operations across 4+ NEOM communities, overseeing end-to-end service delivery, governance, and compliance for 15,000+ residents within a high-complexity giga-project environment.",
@@ -96,7 +96,7 @@ const EXPERIENCE = [
     logo: "/petro.png",
     bullets: [
       "Led residential community operations for 5,000+ residents, designing engagement, recreation, and service programs aligned with corporate objectives and long-term community sustainability.",
-      "Owned annual operational and engagement budgets, translating strategic objectives into scalable programs, events, and services while maintaining safety and quality standards.",
+      "Managed annual operational and engagement budgets, translating strategic objectives into scalable programs, events, and services while maintaining safety and quality standards.",
       "Built enterprise communication and engagement platforms, including PETRO NEWS and multimedia initiatives, strengthening organizational alignment and community cohesion across the residential ecosystem."
     ],
   },
@@ -233,13 +233,7 @@ export default function Portfolio() {
   const headerScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.98]);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 relative overflow-hidden">
-      {/* Background Elements - Simplified */}
-      <div className="fixed inset-0 opacity-20">
-        <div className="absolute top-0 -right-4 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute -bottom-8 -left-4 w-96 h-96 bg-slate-300 rounded-full mix-blend-multiply filter blur-xl"></div>
-      </div>
-
+    <div className="min-h-screen bg-white text-slate-800 relative overflow-hidden">
       {/* NAV */}
       <nav className="border-b border-blue-200/40 bg-white/95 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-6 py-4">
@@ -376,6 +370,7 @@ export default function Portfolio() {
                   <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.5 }}
                   >
                     <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 bg-clip-text text-transparent mb-2">{kpi.value}</div>
@@ -413,6 +408,7 @@ export default function Portfolio() {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.6 }}
                   >
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
@@ -447,6 +443,7 @@ export default function Portfolio() {
                           className="flex gap-3"
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
                           transition={{ delay: (i * 0.1) + (j * 0.05), duration: 0.5 }}
                         >
                           <ArrowRight size={16} className="text-blue-500 mt-0.5 flex-shrink-0" />
@@ -473,6 +470,7 @@ export default function Portfolio() {
                     className="border-b border-slate-100 last:border-b-0 pb-8 last:pb-0"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.6 }}
                     whileHover={{ x: 8 }}
                   >
@@ -502,6 +500,7 @@ export default function Portfolio() {
                     className="flex justify-between items-start"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.6 }}
                   >
                     <div>
@@ -578,6 +577,7 @@ export default function Portfolio() {
             className="text-sm text-slate-500"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             © {new Date().getFullYear()} {META.name}. Professional Executive Portfolio.
