@@ -1,5 +1,6 @@
 "use client";
 
+// Updated: Force fresh Vercel deployment - no conflicting TypeScript files
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
