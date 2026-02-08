@@ -66,7 +66,8 @@ const LEADERSHIP_FOCUS = [
 const EXPERIENCE = [
   {
     company: "NEOM",
-    role: "Senior Resident Relations Specialist",
+    location: "Tabuk, Saudi Arabia",
+    role: "Senior Resident Relations and Facilities Specialist",
     period: "April 2024 – Present",
     duration: "1.75 years",
     logo: "/neom-logo-png_seeklogo-358578.png",
@@ -77,8 +78,9 @@ const EXPERIENCE = [
     ],
   },
   {
-    company: "Petro Rabigh (Aramco Joint Venture)",
-    role: "Head of Tenant Services & Relations at PlusTech Park",
+    company: "Rabigh Refining & Petrochemical Company (Petro Rabigh - Aramco)",
+    location: "Rabigh, Saudi Arabia",
+    role: "Head of Tenant Asset Operations & Services",
     period: "October 2020 – March 2024",
     duration: "3.5 years",
     logo: "/petro.png",
@@ -89,8 +91,9 @@ const EXPERIENCE = [
     ],
   },
   {
-    company: "Petro Rabigh (Aramco Joint Venture)",
-    role: "Head of Community Recreation & Engagement",
+    company: "Rabigh Refining & Petrochemical Company",
+    location: "Rabigh, Saudi Arabia",
+    role: "Head of Community Recreation, Facilities, & Operations",
     period: "May 2008 – October 2020",
     duration: "12.5 years",
     logo: "/petro.png",
@@ -422,6 +425,9 @@ export default function Portfolio() {
                       <div>
                         <h3 className="font-bold text-xl text-slate-900 mb-1">{job.role}</h3>
                         <div className="text-blue-700 font-medium text-lg">{job.company}</div>
+                        {job.location && (
+                          <div className="text-slate-500 text-sm mt-1">{job.location}</div>
+                        )}
                       </div>
                     </div>
                     <div className="text-right">
