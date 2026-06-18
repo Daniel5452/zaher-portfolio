@@ -73,8 +73,8 @@ const EXPERIENCE = [
     duration: "2 Months",
     logo: "/qu.jpeg",
     bullets: [
-      "Provide operations and strategy consulting across the company's active projects, including facility management, hotel renovation, manpower allocation, and logistics planning.",
-      "Build partnership networks that position the company to represent client portfolios, including hospitality operators with multi-site hotel projects.",
+      "Provide operations and strategy consulting across the companies' project portfolio, covering facility/asset management, hospitality/hotel renovation, manpower allocation, and logistics. I advise on project delivery and feasibility while leading business development.",
+      "Build partnership networks that position the company to represent client portfolios, including hospitality operators with multiple hotel projects and chemical manufacturers.",
       "Lead operational business development by identifying, approaching, and securing major clients and projects to grow the company's pipeline."
     ],
   },
