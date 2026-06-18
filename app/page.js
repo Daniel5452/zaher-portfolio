@@ -71,7 +71,7 @@ const EXPERIENCE = [
     role: "Director of Operations",
     period: "May 2026 – Present",
     duration: "1.75 years",
-    logo: "/burooj_with_bgc.png",
+    logo: "/burooj.png",
     bullets: [
       "Provide operations and strategy consulting across the company's active projects, including facility management, hotel renovation, manpower allocation, and logistics planning.",
       "Build partnership networks that position the company to represent client portfolios, including hospitality operators with multi-site hotel projects.",
