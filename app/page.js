@@ -49,7 +49,7 @@ const EXECUTIVE_KPIS = [
   { label: "Residents Successfully Managed", value: "15,000+", sublabel: "Across NEOM communities delivered" },
   { label: "Hotel Operations Overseen", value: "450+", sublabel: "Rooms managed (Hilton & Waldorf Astoria)" },
   { label: "SLA Compliance Achieved", value: "95%+", sublabel: "Consistently delivered excellence" },
-  { label: "Executive Experience Gained", value: "15+", sublabel: "Years of senior leadership" },
+  { label: "Leadership Experience Gained", value: "20+", sublabel: "Years of senior leadership" },
   { label: "Communities Transformed", value: "4+", sublabel: "NEOM project sites delivered" },
   { label: "Stakeholders Engaged", value: "25,000+", sublabel: "Through newsletter publications" },
 ];
@@ -365,7 +365,7 @@ export default function Portfolio() {
           className="text-center mb-8"
         >
           <h2 className="text-xl font-semibold text-slate-800 mb-2">Core Competencies</h2>
-          <p className="text-sm text-slate-600">15+ years of executive leadership excellence</p>
+          <p className="text-sm text-slate-600">20+ years of leadership experience</p>
         </motion.div>
         <Marquee items={SKILLS} />
       </section>
