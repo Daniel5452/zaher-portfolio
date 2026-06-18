@@ -20,6 +20,7 @@ const META = {
   location: "Jeddah, Saudi Arabia",
   linkedin: "https://www.linkedin.com/in/zaherbosman",
   resumeUrl: "/Resume_Zaher.pdf",
+  email: "zaher_osman@hotmail.com"
 };
 
 // Core Skills for floating animation
