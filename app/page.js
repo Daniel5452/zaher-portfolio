@@ -13,12 +13,11 @@ import {
 // ---------- PERSONAL INFORMATION ----------
 const META = {
   name: "Zaher Osman",
-  title: "Senior Operations & Hospitality Services Leader",
-  valueProposition: "Driving operational excellence across large-scale residential communities and hospitality operations in Saudi Arabia's transformative projects",
-  about: "Senior operations leader with 15+ years managing large-scale residential communities (15,000+ residents) and hospitality operations (450+ rooms) across Saudi Arabia's most prestigious projects, including NEOM, Aramco-affiliated Petro Rabigh, and international luxury hospitality brands including Hilton and Waldorf Astoria (Qasr Al Sharq). Proven track record of delivering operational excellence, 95%+ SLA compliance, and cost optimization in remote, high-demand giga-project environments, while ensuring resident satisfaction. Proven track record developing and executing comprehensive communication strategies, founding community publication newsletters including The SUNRISE at NEOM (reaching 25,000+ individuals) and PETRO NEWS (reaching 5,000+ residents), and creating multimedia content that enhances stakeholder engagement and brand presence.",
-  email: "zaher_osman@hotmail.com",
+  title: "Director of Operations, Facilities, Residential, and Hospitality Services Leader ",
+  valueProposition: "Driving operational excellence across large-scale projects, communities, and hospitality operations in Saudi Arabia",
+  about: "Senior Residential & Hospitality Operations Leader with 20+ years of international experience leading large‑scale residential compounds, workforce communities, and luxury hospitality operations. I specialize in transforming complex, multi‑service operations into high‑performing, well‑governed environments across accommodation, facility management, hospitality services, and community operations. With 20 years in Saudi Arabia, I have driven operational excellence across flagship developments including NEOM, Aramco‑affiliated Petro Rabigh, and luxury brands such as Hilton and Waldorf Astoria. I have led 15,000+ resident communities, 400+ room hospitality operations, and multi-million SAR asset portfolios across industrial parks, consistently delivering 95%+ SLA compliance, operational efficiency, and cost optimization in demanding giga-project environments. I bring deep expertise in operational governance, KPI‑driven performance, and service excellence within high‑density, multicultural settings, with a track record of elevating resident experience and strengthening organizational performance. I also lead strategic communication initiatives, including high‑reach community publications such as The SUNRISE at NEOM and PETRO NEWS at Petro Rabigh, enhancing engagement, identity, and stakeholder alignment.", 
   phone: "+966 555179456",
-  location: "Jeddah, Saudi Arabia - NEOM, Saudi Arabia",
+  location: "Jeddah, Saudi Arabia",
   linkedin: "https://www.linkedin.com/in/zaherbosman",
   resumeUrl: "/Resume_Zaher.pdf",
 };
@@ -26,6 +25,7 @@ const META = {
 // Core Skills for floating animation
 const SKILLS = [
   { name: "Executive Leadership", icon: Crown },
+  { name: "Events Management", icon: Briefcase },
   { name: "Multi-Site Operations (15K+ residents)", icon: Building2 },
   { name: "Hospitality Management (450+ rooms)", icon: Hotel },
   { name: "SLA Management (95%+ compliance)", icon: CheckCircle2 },
@@ -66,11 +66,25 @@ const LEADERSHIP_FOCUS = [
 // ---------- EXPERIENCE DATA ----------
 const EXPERIENCE = [
   {
+    company: "Qumreya Operations & Maintenance/Burooj Consulting",
+    location: "Jeddah, Saudi Arabia",
+    role: "Director of Operations",
+    period: "May 2026 – Present",
+    duration: "1.75 years",
+    logo: "/burooj_with_bgc.png",
+    bullets: [
+      "Provide operations and strategy consulting across the company's active projects, including facility management, hotel renovation, manpower allocation, and logistics planning.",
+      "Build partnership networks that position the company to represent client portfolios, including hospitality operators with multi-site hotel projects.",
+      "Lead operational business development by identifying, approaching, and securing major clients and projects to grow the company's pipeline."
+    ],
+  },
+  
+  {
     company: "NEOM",
     location: "Tabuk, Saudi Arabia",
     role: "Senior Resident Relations and Facilities Specialist",
-    period: "April 2024 – Present",
-    duration: "1.75 years",
+    period: "April 2024 – April 2026",
+    duration: "2 years",
     logo: "/neom-logo-png_seeklogo-358578.png",
     bullets: [
       "Directed resident experience operations across 4+ NEOM communities, overseeing end-to-end service delivery, governance, and compliance for 15,000+ residents within a high-complexity giga-project environment.",
